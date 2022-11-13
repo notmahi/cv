@@ -18,17 +18,24 @@ jobs:
       - uses: wtfjoke/setup-tectonic@v2
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Run Tectonic
         run: tectonic CV.tex
+
       - name: Upload pdf
         uses: actions/upload-artifact@v3
         with:
           name: CV
           path: CV.pdf
 
+      - name: Remove everything but the generated PDF file.
+        run: |
+          rm -rfv !(*.pdf)
+
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: Automatic build of PDF.
           #  You might need to set `create_branch: true` if the branch does not exist.
           branch: gh-pages
+          push_options: '--force'
           create_branch: true
