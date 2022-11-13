@@ -30,7 +30,8 @@ jobs:
 
       - name: Remove everything but the generated PDF file.
         run: |
-          rm -rfv !(*.pdf)
+          rm -rvf src/*
+          rm -vf CV-Preamble.tex CV.tex LICENSE
 
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
