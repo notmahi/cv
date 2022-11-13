@@ -1,0 +1,100 @@
+% !TEX TS-program = xelatex
+% !TEX encoding = UTF-8
+
+
+\documentclass[a4paper,10pt,oneside]{article}
+%\documentclass[letterpaper,10pt,oneside]{article}
+\usepackage{fontspec}
+% Do not stop on errors during compilation.
+\nonstopmode
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% PREAMBLE.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\input{CV-Preamble.tex}
+
+% PDF settings and properties.
+\hypersetup{
+pdftitle={Resume-CV},
+pdfauthor={Nur Muhammad Shafiullah},
+pdfcreator={XeLaTeX},
+pdfproducer={},
+pdfkeywords={},
+pdfpagemode={},
+bookmarks=true,
+unicode=true,
+bookmarksopen=true,
+pdfstartview=FitH,
+pdfpagelayout=OneColumn,
+pdfpagemode=UseOutlines,
+hidelinks,
+breaklinks}
+\pagenumbering{gobble} 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% ACTUAL DOCUMENT.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%%%%%%%%%%%%%%%
+% TITLE BLOCK %
+%%%%%%%%%%%%%%%
+
+{\huge{Nur Muhammad ``Mahi" Shafiullah}}
+
+\vspace{0.1in}
+\hrule
+
+\begin{body}
+\section{Contact}
+{Contact}
+\begin{minipage}{0.49\linewidth}
+{\begin{tabular}{ll}
+\textbf{E-mail}: & \href{mailto:mahi@cs.nyu.edu}
+{{mahi@cs.nyu.edu}}\\
+\textbf{Homepage}: & \href{http://mahis.life}
+{{mahis.life}}\\
+\end{tabular}}
+\end{minipage}
+\begin{minipage}{0.5\linewidth}
+\begin{tabular}{ll}
+\textbf{Phone}: & (617)\,\,909--3049\\
+% \textbf{Mail}: & XXXX \\
+\end{tabular}
+\end{minipage}
+
+
+%%%%%%%%%%%%%%%
+%% EDUCATION %%
+%%%%%%%%%%%%%%%
+\input{education}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%% RESEARCH EXPERIENCE %%
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\input{research_experience}
+\input{pubs}
+\input{honors}
+
+\input{work_experience}
+\input{teaching_experience}
+% \input{indie_projects}
+
+\input{volunteering}
+
+% %%%%%%%%%%%%%%%%%%
+% %% PUBLICATIONS %%
+% %%%%%%%%%%%%%%%%%%
+
+% \input{pubs}
+
+%%%%%%%%%%%%%%%%
+%% REFERENCES %%
+%%%%%%%%%%%%%%%%
+% \input{references}
+
+\end{body}
+
+\end{document}
