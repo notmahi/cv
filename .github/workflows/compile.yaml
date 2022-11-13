@@ -23,5 +23,34 @@ jobs:
       - name: Upload pdf
         uses: actions/upload-artifact@v3
         with:
-          name: main
-          path: main.pdf
+          name: CV
+          path: CV.pdf
+
+      - uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          # Optional. Commit message for the created commit.
+          # Defaults to "Apply automatic changes"
+          commit_message: Automatic build of PDF.
+
+          # Optional. Local and remote branch name where commit is going to be pushed
+          #  to. Defaults to the current branch.
+          #  You might need to set `create_branch: true` if the branch does not exist.
+          branch: gh-pages
+
+          # Optional glob pattern of files which should be added to the commit
+          # Defaults to all (.)
+          # See the `pathspec`-documentation for git
+          # - https://git-scm.com/docs/git-add#Documentation/git-add.txt-ltpathspecgt82308203
+          # - https://git-scm.com/docs/gitglossary#Documentation/gitglossary.txt-aiddefpathspecapathspec
+          file_pattern: 'CV.pdf'
+
+          # Optional. Option used by `git-status` to determine if the repository is 
+          # dirty. See https://git-scm.com/docs/git-status#_options
+          status_options: '--untracked-files=no'
+
+          # Optional. Options used by `git-add`.
+          # See https://git-scm.com/docs/git-add#_options
+          add_options: '-u'
+
+          # Optional. Create given branch name in local and remote repository.
+          create_branch: true
